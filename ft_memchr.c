@@ -3,11 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 08:35:02 by miavrako          #+#    #+#             */
-/*   Updated: 2026/01/20 08:35:03 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/04 09:08:57 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+
+}

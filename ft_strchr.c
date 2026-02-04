@@ -3,11 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 08:34:26 by miavrako          #+#    #+#             */
-/*   Updated: 2026/01/20 08:34:29 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/01/28 09:19:08 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	*ft_strchr(const char *s, int c)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	while (*s != (char)c)
+	{
+		s++;
+	}
+	return ((char *)s);
+}
