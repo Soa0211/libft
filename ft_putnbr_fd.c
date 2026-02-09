@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 16:29:08 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 16:31:54 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/09 21:27:17 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		ft_putchar_fd(n % 10 + '0', fd);
+		ft_putchar_fd((n % 10) + '0', fd);
 	}
 }

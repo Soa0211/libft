@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 16:23:14 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 16:25:03 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/09 21:24:18 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s != '\0')
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	if (!s)
+		return;
+	else
+		write(fd, s, ft_strlen(s));
 }
