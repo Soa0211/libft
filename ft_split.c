@@ -3,126 +3,99 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miavrako <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 22:15:33 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/08 23:23:15 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/09 15:02:45 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int count_words(char const *s, char del)
+static int	count_words(char const *s, char del)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    while (*s)
-    {
-        while (*s && *s == del)
-            s++;
-        if (*s)
-        {
-            while (*s && *s != del)
-                s++;
-            count++;
-        }    
-    }
-    return (count);
+	count = 0;
+	while (*s)
+	{
+		while (*s && *s == del)
+			s++;
+		if (*s)
+		{
+			while (*s && *s != del)
+				s++;
+			count++;
+		}
+	}
+	return (count);
 }
 
-int len_word(char const *s, char del)
+static int	len_word(char const *s, char del)
 {
-    int len;
-    
-    len = 0;
-    while (s[len] && s[len] != del)
-        len++;
-    return (len);
+	int	len;
+
+	len = 0;
+	while (s[len] && s[len] != del)
+		len++;
+	return (len);
 }
 
-char    *cpy(char const *s, int len)
+static char	*cpy(char const *s, int len)
 {
-    char    *word;
-    int i;
+	char	*word;
+	int		i;
 
-    word = malloc(sizeof(char) * (len + 1));
-    if (!word)
-        return(NULL);
-    i = 0;
-    while (i < len)
-    {
-        word[i] = s[i];
-        i++;
-    }
-    word[i] = '\0';
-    return (word);
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
 }
 
-void    free_all(char **arr, int new_word)
+static void	free_all(char **arr, int new_word)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < new_word)
-    {
-        free(arr[i]);
-        i++;
-    }
-    free(arr);
+	i = 0;
+	while (i < new_word)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char    **res;
-    int total;
-    int i;
-    int len;
+	char	**res;
+	int		i;
 
-    if(!s)
-        return(NULL);
-    total = count_words(s, c);
-    res = malloc(sizeof(char *) * (total + 1));
-    if (!res)
-        return(NULL);
-    i = 0;
-    while (*s)
-    {
-        while (*s && *s == c)
-            s++;
-        if (*s)
-        {
-            len = len_word(s, c);
-            res[i] = cpy(s, len);
-
-            if (!res[i])
-                {
-                    free_all(res, i);
-                    return(NULL);
-                }
-            s = s + len;
-            i++;
-        }
-    }
-    res[i] = '\0';
-    return (res);
-}
-
-#include <stdio.h>
-int main()
-{
-    char **res;
-    int i;
-    
-    res = ft_split("Coucou,tout,le,monde", ',');
-
-    i = 0;
-    while (res[i])
-    {
-        printf("res[%d] = %s\n", i, res[i]);
-        free(res[i]);
-        i++;
-    }
-    free(res);
-    return(0);
+	if (!s)
+		return (NULL);
+	res = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			res[i] = cpy(s, len_word(s, c));
+			if (!res[i])
+				return (free_all(res, i), NULL);
+			s = s + len_word(s, c);
+			i++;
+		}
+		else
+			s++;
+	}
+	res[i] = '\0';
+	return (res);
 }

@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 08:34:36 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 14:49:12 by miavrako         ###   ########.fr       */
+/*   Created: 2026/02/09 16:18:02 by miavrako          #+#    #+#             */
+/*   Updated: 2026/02/09 16:19:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*d;
 
-	d = "\0";
-	while (*s != '\0')
-	{
-		if (*s == (char)c)
-			d = (char *)s;
-		s++;
-	}
-	return (d);
 }
