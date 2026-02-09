@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 16:29:08 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 21:27:17 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/09 23:16:06 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		write (fd, '-', 1);
+		write (fd, "-", 1);
 		n = -n;
 	}
 	if (n >= 10)

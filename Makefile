@@ -43,20 +43,19 @@ SOURCES =	ft_isalpha.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c \
+			ft_lstmap.c
 
-OBJS = $(SOURCES: .c= .o)
+OBJS = $(SOURCES:.c=.o)
 HEADER = libft.h
 all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-clean :
+clean:
 	rm -f $(OBJS)
-fclean :
+fclean:
 	rm -f $(NAME)
-re :
-	fclean all
+re: fclean all
 
 .PHONY : all clean fclean re
