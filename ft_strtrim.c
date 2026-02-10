@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 23:23:44 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 15:14:01 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/10 16:12:41 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	start = 0;
 	while (s1[start] && is_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
-	while (end >= start && is_set (s1[end], set))
+	while (end >= start && is_set(s1[end], set))
 		end--;
-	res = malloc(sizeof(char) * (end - start +1));
+	res = malloc(sizeof(char) * (end - start + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
