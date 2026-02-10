@@ -6,13 +6,13 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 08:34:13 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 14:49:18 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:15:43 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if ((c >= 'a') && (c <= 'z'))
+	if ((c >= 'A') && (c <= 'Z'))
 		c = c + 32;
 	return (c);
 }

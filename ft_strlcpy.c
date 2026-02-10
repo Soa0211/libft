@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 08:33:42 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 14:49:07 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:20:17 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	while (src[i] != '\0' && i < size - 1)
 	{
-		dest[i] = src [i];
+		dest[i] = src[i];
 		i++;
 	}
+	*(dest + i) = '\0';
 	return (lsrc);
 }
