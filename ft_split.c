@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 22:15:33 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 15:02:45 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/10 14:31:17 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,6 @@ char	**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-	res[i] = '\0';
+	res[i] = NULL;
 	return (res);
 }

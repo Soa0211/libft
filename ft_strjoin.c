@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 14:00:35 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 23:15:30 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/10 14:41:40 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	while (s1[i])
-	{	
+	{
 		res[i] = s1[i];
 		i++;
 	}

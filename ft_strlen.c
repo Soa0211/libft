@@ -6,11 +6,12 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 08:31:44 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 14:51:49 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/10 14:40:00 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
