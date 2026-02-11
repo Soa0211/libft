@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 23:23:44 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/10 16:12:41 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/11 22:38:20 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,11 @@ static int	is_set(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static char	*str(char const *s1, size_t start, size_t end)
 {
 	char	*res;
-	int		start;
-	int		end;
-	int		i;
+	size_t	i;
 
-	if (!s1)
-		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
-	start = 0;
-	while (s1[start] && is_set(s1[start], set))
-		start++;
-	end = ft_strlen(s1);
-	while (end >= start && is_set(s1[end], set))
-		end--;
 	res = malloc(sizeof(char) * (end - start + 1));
 	if (!res)
 		return (NULL);
@@ -54,4 +42,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	res[i] = '\0';
 	return (res);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char		*result;
+	size_t		start;
+	size_t		end;
+
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	start = 0;
+	while (s1[start] && is_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && is_set(s1[end - 1], set))
+		end--;
+	if (end < start)
+		return (ft_strdup(""));
+	result = str(s1, start, end);
+	return (result);
 }

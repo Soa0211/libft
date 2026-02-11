@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 23:54:15 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/09 15:23:43 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/11 21:38:57 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	else
 		nb = n;
 	if (nb == 0)
-		result[0] = '\0';
+		result[0] = '0';
 	while (nb > 0)
 	{
 		result[len--] = (nb % 10) + '0';

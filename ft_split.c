@@ -6,7 +6,7 @@
 /*   By: miavrako <miavrako@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 22:15:33 by miavrako          #+#    #+#             */
-/*   Updated: 2026/02/10 16:48:18 by miavrako         ###   ########.fr       */
+/*   Updated: 2026/02/11 21:46:02 by miavrako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	count_words(char const *s, char del)
 			s++;
 		if (*s)
 		{
+			count++;
 			while (*s && *s != del)
 				s++;
-			count++;
 		}
 	}
 	return (count);
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (*s)
 	{
-		if (*s != c)
+		if (*s && *s != c)
 		{
 			res[i] = cpy(s, len_word(s, c));
 			if (!res[i])
